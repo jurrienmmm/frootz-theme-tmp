@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 1.5.0
+Version: 1.6.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1608,4 +1608,26 @@ body::after {
 .whatsapp-sticky { right: 28px !important; bottom: 28px !important; }
 @media (max-width: 768px) {
     .whatsapp-sticky { right: 18px !important; bottom: 18px !important; }
+}
+
+/* ==========================================================================
+   WPForms — donker-thema aanpassing (2026-04-15)
+   ========================================================================== */
+body:not(.theme-light) .wpforms-container-full .wpforms-field-label,
+body:not(.theme-light) .wpforms-container-full .wpforms-field-sublabel {
+    color: #f7f1e0 !important;
+}
+body:not(.theme-light) .wpforms-container-full .wpforms-field input[type=text],
+body:not(.theme-light) .wpforms-container-full .wpforms-field input[type=email],
+body:not(.theme-light) .wpforms-container-full .wpforms-field textarea {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #f7f1e0 !important;
+    border-color: #d4af37 !important;
+}
+body:not(.theme-light) .wpforms-container-full .wpforms-field input::placeholder,
+body:not(.theme-light) .wpforms-container-full .wpforms-field textarea::placeholder {
+    color: rgba(247, 241, 224, 0.45) !important;
+}
+body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
+    color: #d4af37 !important;
 }
