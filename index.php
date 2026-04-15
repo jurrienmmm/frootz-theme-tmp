@@ -23,6 +23,7 @@
     <!-- Hreflang -->
     <link rel="alternate" hreflang="nl" href="?lang=nl" />
     <link rel="alternate" hreflang="en" href="?lang=en" />
+    <link rel="alternate" hreflang="es" href="?lang=es" />
     <link rel="alternate" hreflang="x-default" href="?lang=nl" />
 
     <!-- Schema.org Structured Data -->
@@ -53,7 +54,7 @@
 
             <!-- Left Navigation -->
             <nav class="nav-left" id="nav-left" role="navigation" aria-label="Primary left navigation">
-                <a href="?lang=nl#producten">Producten</a><a href="?lang=nl#zakelijk">Zakelijk</a>            </nav>
+                <a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#producten">Producten</a><a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#zakelijk">Zakelijk</a>            </nav>
 
             <!-- Centered Logo -->
             <div class="header-logo">
@@ -64,12 +65,13 @@
 
             <!-- Right Navigation -->
             <nav class="nav-right" id="nav-right" role="navigation" aria-label="Primary right navigation">
-                <a href="?lang=nl#over-ons">Over ons</a><a href="?lang=nl#contact">Contact</a>            </nav>
+                <a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#over-ons">Over ons</a><a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#contact">Contact</a>            </nav>
 
             <!-- Language Switcher -->
-                        <div class="lang-switcher">
-                <a href="?lang=nl" class="lang-btn active">NL</a>
-                <a href="?lang=en" class="lang-btn ">EN</a>
+            <div class="lang-switcher">
+                <?php $current_lang = frootz_current_lang(); foreach (frootz_available_languages() as $code => $name): ?>
+                    <a href="?lang=<?php echo esc_attr($code); ?>" class="lang-btn<?php echo $current_lang === $code ? ' active' : ''; ?>"><?php echo strtoupper($code); ?></a>
+                <?php endforeach; ?>
             </div>
 
             <!-- Theme Toggle -->
