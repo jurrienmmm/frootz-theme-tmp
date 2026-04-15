@@ -54,7 +54,7 @@
 
             <!-- Left Navigation -->
             <nav class="nav-left" id="nav-left" role="navigation" aria-label="Primary left navigation">
-                <a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#producten">Producten</a><a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#zakelijk">Zakelijk</a>            </nav>
+                <a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#producten"><?php echo esc_html(frootz_get('nav_products')); ?></a><a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#zakelijk"><?php echo esc_html(frootz_get('nav_business')); ?></a>            </nav>
 
             <!-- Centered Logo -->
             <div class="header-logo">
@@ -65,7 +65,7 @@
 
             <!-- Right Navigation -->
             <nav class="nav-right" id="nav-right" role="navigation" aria-label="Primary right navigation">
-                <a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#over-ons">Over ons</a><a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#contact">Contact</a>            </nav>
+                <a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#over-ons"><?php echo esc_html(frootz_get('nav_about')); ?></a><a href="?lang=<?php echo esc_attr(frootz_current_lang()); ?>#contact"><?php echo esc_html(frootz_get('nav_contact')); ?></a>            </nav>
 
             <!-- Language Switcher -->
             <div class="lang-switcher">
@@ -109,8 +109,8 @@
             </p>
 
             <div class="btn-group">
-                <a href="#producten" class="btn btn--primary">Ontdek de Collectie</a>
-                <a href="#zakelijk" class="btn btn--secondary">Zakelijke samenwerking</a>
+                <a href="#producten" class="btn btn--primary"><?php echo esc_html(frootz_get('cta_discover')); ?></a>
+                <a href="#zakelijk" class="btn btn--secondary"><?php echo esc_html(frootz_get('cta_business')); ?></a>
             </div>
 
         </div>
@@ -122,14 +122,14 @@
     <section class="sample-cta-banner" id="sample">
         <div class="container">
             <div class="sample-cta-content">
-                                <h3>Ervaar het zelf</h3>
-                <p>Plan een proeverij op locatie — geheel vrijblijvend.</p>
+                                <h3><?php echo esc_html(frootz_get('sample_title')); ?></h3>
+                <p><?php echo esc_html(frootz_get('sample_intro')); ?></p>
                 <a href="https://wa.me/<?php echo esc_attr(frootz_get('whatsapp_number')); ?>?text=Plan+een+proeverij"
                    class="btn btn-primary btn-large"
                    target="_blank"
                    rel="noopener">
-                    Plan een proeverij                </a>
-                <small>Voor hotels, restaurants en premium retail</small>
+                    <?php echo esc_html(frootz_get('sample_cta')); ?>                </a>
+                <small><?php echo esc_html(frootz_get('sample_small')); ?></small>
             </div>
         </div>
     </section>
@@ -141,10 +141,10 @@
         <div class="section-inner">
 
             <div class="section-header">
-                <span class="section-subtitle">De collectie</span>
-                <h2>De koninklijke collectie</h2>
+                <span class="section-subtitle"><?php echo esc_html(frootz_get('products_subtitle')); ?></span>
+                <h2><?php echo esc_html(frootz_get('products_title')); ?></h2>
                 <p style="max-width: 550px; margin: 15px auto 0; opacity: 0.7;">
-                    Vijf kenmerkende smaken, elk gedoopt in premium Callebaut Belgische chocolade. Gedroogd voor de perfecte crunch.                </p>
+                    <?php echo esc_html(frootz_get('products_intro')); ?>                </p>
                 <div class="section-divider"></div>
             </div>
 
@@ -155,9 +155,9 @@
                     <img src="<?php echo esc_url(wp_get_attachment_image_url(19, 'full')); ?>"
                          alt="Aardbei Royale"
                          class="product-img">
-                    <h3>Aardbei Royale</h3>
-                    <p>Zongerijpte aardbeien, perfect gedroogd en rijkelijk gedoopt in Callebaut Belgische chocolade.</p>
-                    <span class="product-tag">Aardbei + chocolade</span>
+                    <h3><?php echo esc_html(frootz_get('product_strawberry_name')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('product_strawberry_desc')); ?></p>
+                    <span class="product-tag"><?php echo esc_html(frootz_get('product_strawberry_tag')); ?></span>
                 </article>
 
                 <!-- Mango Royale -->
@@ -165,9 +165,9 @@
                     <img src="<?php echo esc_url(wp_get_attachment_image_url(16, 'full')); ?>"
                          alt="Mango Royale"
                          class="product-img">
-                    <h3>Mango Royale</h3>
-                    <p>Heerlijke mango, gedroogd voor die perfecte tropische crunch, omwikkeld met fluwelen Callebaut chocolade.</p>
-                    <span class="product-tag">Mango + chocolade</span>
+                    <h3><?php echo esc_html(frootz_get('product_mango_name')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('product_mango_desc')); ?></p>
+                    <span class="product-tag"><?php echo esc_html(frootz_get('product_mango_tag')); ?></span>
                 </article>
 
                 <!-- Strawberry White Royale -->
@@ -175,20 +175,20 @@
                     <img src="<?php echo esc_url(wp_get_attachment_image_url(22, 'full')); ?>"
                          alt="Aardbei Royale Wit"
                          class="product-img">
-                    <h3>Aardbei Royale Wit</h3>
-                    <p>Zongerijpte aardbeien, perfect gedroogd en omwikkeld met fluwelen Callebaut Belgische witte chocolade.</p>
-                    <span class="product-tag">Aardbei + witte chocolade</span>
+                    <h3><?php echo esc_html(frootz_get('product_whitestrawberry_name')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('product_whitestrawberry_desc')); ?></p>
+                    <span class="product-tag"><?php echo esc_html(frootz_get('product_whitestrawberry_tag')); ?></span>
                 </article>
 
                 <!-- Pineapple Royale -->
                 <article class="product-card product-card--coming-soon animate-in animate-in--delay-3">
-                    <span class="coming-soon-badge" data-i18n="coming_soon">Binnenkort</span>
+                    <span class="coming-soon-badge"><?php echo esc_html(frootz_get('coming_soon_badge')); ?></span>
                     <img src="<?php echo esc_url(wp_get_attachment_image_url(18, 'full')); ?>"
                          alt="Ananas Royale"
                          class="product-img">
-                    <h3>Ananas Royale</h3>
-                    <p>Frisse tropische ananas, gedroogd voor intense smaak, omhuld met zachte Callebaut chocolade.</p>
-                    <span class="product-tag">Ananas + chocolade</span>
+                    <h3><?php echo esc_html(frootz_get('product_pineapple_name')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('product_pineapple_desc')); ?></p>
+                    <span class="product-tag"><?php echo esc_html(frootz_get('product_pineapple_tag')); ?></span>
                 </article>
 
                 <!-- Kiwi Royale -->
@@ -197,9 +197,9 @@
                     <img src="<?php echo esc_url(wp_get_attachment_image_url(15, 'full')); ?>"
                          alt="Kiwi Royale"
                          class="product-img">
-                    <h3>Kiwi Royale</h3>
-                    <p>Knapperige kiwi, gedroogd om de frisse zoetheid vast te houden, afgewerkt met premium Callebaut.</p>
-                    <span class="product-tag">Kiwi + chocolade</span>
+                    <h3><?php echo esc_html(frootz_get('product_kiwi_name')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('product_kiwi_desc')); ?></p>
+                    <span class="product-tag"><?php echo esc_html(frootz_get('product_kiwi_tag')); ?></span>
                 </article>
 
                 <!-- Melon Royale -->
@@ -208,9 +208,9 @@
                     <img src="<?php echo esc_url(wp_get_attachment_image_url(17, 'full')); ?>"
                          alt="Meloen Royale"
                          class="product-img">
-                    <h3>Meloen Royale</h3>
-                    <p>Honingzoete meloen, gedroogd om de natuurlijke zoetheid te concentreren, gecombineerd met de finest Callebaut Belgische chocolade.</p>
-                    <span class="product-tag">Meloen + chocolade</span>
+                    <h3><?php echo esc_html(frootz_get('product_melon_name')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('product_melon_desc')); ?></p>
+                    <span class="product-tag"><?php echo esc_html(frootz_get('product_melon_tag')); ?></span>
                 </article>
 
             </div>
@@ -225,10 +225,10 @@
         <div class="section-inner">
 
             <div class="section-header">
-                <span class="section-subtitle">Voor bedrijven</span>
-                <h2>Samenwerken met Frootz Royale</h2>
+                <span class="section-subtitle"><?php echo esc_html(frootz_get('business_subtitle')); ?></span>
+                <h2><?php echo esc_html(frootz_get('business_title')); ?></h2>
                 <p style="max-width: 550px; margin: 15px auto 0; opacity: 0.7;">
-                    Verhef uw aanbod met premium in chocolade gedoopt fruit. Perfect voor hotels, restaurants, bedrijven en retail.                </p>
+                    <?php echo esc_html(frootz_get('business_intro')); ?>                </p>
                 <div class="section-divider" style="background: var(--rf-frame-brown);"></div>
             </div>
 
@@ -240,8 +240,8 @@
                             <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                         </svg>
                     </div>
-                    <h3>Eigen verpakking</h3>
-                    <p>White-label opties en geschenkdozen op maat, afgestemd op uw huisstijl.</p>
+                    <h3><?php echo esc_html(frootz_get('b2b_card1_title')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('b2b_card1_desc')); ?></p>
                 </div>
 
                 <div class="b2b-card">
@@ -250,8 +250,8 @@
                             <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3>Betrouwbare levering</h3>
-                    <p>Consistente kwaliteit en tijdige levering. Handgemaakt in Den Haag met zorg en precisie.</p>
+                    <h3><?php echo esc_html(frootz_get('b2b_card2_title')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('b2b_card2_desc')); ?></p>
                 </div>
 
                 <div class="b2b-card">
@@ -260,15 +260,15 @@
                             <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
                     </div>
-                    <h3>Premium kwaliteit</h3>
-                    <p>Alleen Callebaut Belgische chocolade en de finest gedroogde vruchten. Zonder compromissen.</p>
+                    <h3><?php echo esc_html(frootz_get('b2b_card3_title')); ?></h3>
+                    <p><?php echo esc_html(frootz_get('b2b_card3_desc')); ?></p>
                 </div>
 
             </div>
 
             <div class="text-center" style="margin-top: 50px;">
                 <a href="https://wa.me/<?php echo esc_attr(frootz_get('whatsapp_number')); ?>?text=Hallo%20Frootz%20Royale%2C%20ik%20wil%20graag%20een%20afspraak%20maken." class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
-                    Bespreek samenwerking via WhatsApp                </a>
+                    <?php echo esc_html(frootz_get('business_cta')); ?>                </a>
             </div>
 
         </div>
@@ -280,58 +280,58 @@
     <section class="faq-section" id="faq">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Veelgestelde Vragen</span>
-                <h2 class="section-title">Veelgestelde Vragen</h2>
-                <p class="section-subtitle">Alles wat u moet weten over het bestellen van Frootz Royale voor uw bedrijf.</p>
+                <span class="section-label"><?php echo esc_html(frootz_get('faq_label')); ?></span>
+                <h2 class="section-title"><?php echo esc_html(frootz_get('faq_title')); ?></h2>
+                <p class="section-subtitle"><?php echo esc_html(frootz_get('faq_intro')); ?></p>
             </div>
             <div class="faq-list">
                                     <details class="faq-item">
                         <summary class="faq-question">
-                            <span>Wat is de minimale bestelhoeveelheid (MOQ)?</span>
+                            <span><?php echo esc_html(frootz_get('faq_q1')); ?></span>
                             <span class="faq-icon">+</span>
                         </summary>
                         <div class="faq-answer">
-                            Onze standaard MOQ voor B2B bestellingen is flexibel — we werken zowel met kleine specialty stores als met grote hotelketens. Neem contact op via WhatsApp voor uw specifieke wensen.                        </div>
+                            <?php echo esc_html(frootz_get('faq_a1')); ?>                        </div>
                     </details>
                                     <details class="faq-item">
                         <summary class="faq-question">
-                            <span>Wat is de houdbaarheid van uw producten?</span>
+                            <span><?php echo esc_html(frootz_get('faq_q2')); ?></span>
                             <span class="faq-icon">+</span>
                         </summary>
                         <div class="faq-answer">
-                            Ons gedroogde fruit met Callebaut chocolade heeft een houdbaarheid van 6-9 maanden bewaard op een koele, droge plaats. Koeling is niet nodig.                        </div>
+                            <?php echo esc_html(frootz_get('faq_a2')); ?>                        </div>
                     </details>
                                     <details class="faq-item">
                         <summary class="faq-question">
-                            <span>Bieden jullie eigen verpakking of white-label opties aan?</span>
+                            <span><?php echo esc_html(frootz_get('faq_q3')); ?></span>
                             <span class="faq-icon">+</span>
                         </summary>
                         <div class="faq-answer">
-                            Ja, we bieden white-label verpakking en geschenkdozen op maat van uw merk. Perfect voor hotels, relatiegeschenken en private label retail.                        </div>
+                            <?php echo esc_html(frootz_get('faq_a3')); ?>                        </div>
                     </details>
                                     <details class="faq-item">
                         <summary class="faq-question">
-                            <span>Wat zijn de levertijden en leveringsgebieden?</span>
+                            <span><?php echo esc_html(frootz_get('faq_q4')); ?></span>
                             <span class="faq-icon">+</span>
                         </summary>
                         <div class="faq-answer">
-                            We leveren in heel Nederland en België binnen 3-5 werkdagen. Europese levering op aanvraag beschikbaar.                        </div>
+                            <?php echo esc_html(frootz_get('faq_a4')); ?>                        </div>
                     </details>
                                     <details class="faq-item">
                         <summary class="faq-question">
-                            <span>Zijn jullie producten allergenen-vrij?</span>
+                            <span><?php echo esc_html(frootz_get('faq_q5')); ?></span>
                             <span class="faq-icon">+</span>
                         </summary>
                         <div class="faq-answer">
-                            Onze producten bevatten melk, soja (uit chocolade) en kunnen sporen van noten bevatten. Volledige allergenen- en ingredientenspecificaties op aanvraag beschikbaar.                        </div>
+                            <?php echo esc_html(frootz_get('faq_a5')); ?>                        </div>
                     </details>
                                     <details class="faq-item">
                         <summary class="faq-question">
-                            <span>Kan ik een proefpakket bestellen voordat ik besluit?</span>
+                            <span><?php echo esc_html(frootz_get('faq_q6')); ?></span>
                             <span class="faq-icon">+</span>
                         </summary>
                         <div class="faq-answer">
-                            Zeker. We bieden proefpakketten aan voor gekwalificeerde B2B kopers. Vraag uw pakket aan via WhatsApp en we sturen u een geselecteerde samenstelling.                        </div>
+                            <?php echo esc_html(frootz_get('faq_a6')); ?>                        </div>
                     </details>
                             </div>
         </div>
@@ -346,11 +346,11 @@
             <div class="about-content">
 
                 <div class="about-text">
-                    <span class="section-subtitle">Ons verhaal</span>
+                    <span class="section-subtitle"><?php echo esc_html(frootz_get('about_subtitle')); ?></span>
                     <h2><?php echo esc_html(frootz_get('about_title')); ?></h2>
                     <?php echo wp_kses_post(wpautop(frootz_get('about_body'))); ?>
                     <div style="margin-top: 30px;">
-                        <a href="#contact" class="btn btn--secondary">Neem contact op</a>
+                        <a href="#contact" class="btn btn--secondary"><?php echo esc_html(frootz_get('about_cta')); ?></a>
                     </div>
                 </div>
 
@@ -372,8 +372,8 @@
             <div class="contact-content">
 
                 <div class="section-header">
-                    <span class="section-subtitle">Neem Contact Op</span>
-                    <h2>Laten We Praten</h2>
+                    <span class="section-subtitle"><?php echo esc_html(frootz_get('contact_subtitle')); ?></span>
+                    <h2><?php echo esc_html(frootz_get('contact_title')); ?></h2>
                     <p style="opacity: 0.7;">
                         <?php echo esc_html(frootz_get('contact_intro')); ?>
                     </p>
@@ -385,13 +385,13 @@
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;" aria-hidden="true">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        Chat via WhatsApp                    </a>
+                        <?php echo esc_html(frootz_get('contact_whatsapp_btn')); ?>                    </a>
                     <a href="<?php echo esc_url(frootz_get('instagram_url')); ?>" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
-                        DM op Instagram                    </a>
+                        <?php echo esc_html(frootz_get('contact_instagram_btn')); ?>                    </a>
                 </div>
 
                 <div class="contact-divider">
-                    <span>of stuur een bericht</span>
+                    <span><?php echo esc_html(frootz_get('contact_divider')); ?></span>
                 </div>
 
                 <!-- Contact Form (WPForms) -->
@@ -429,8 +429,8 @@
 
             <p class="footer-copyright">
                 <?php echo esc_html(frootz_get('copyright_line')); ?>                <br>
-                <small>Ambachtelijk bereid in Den Haag</small><br>
-                <small><a href="<?php echo esc_url(get_permalink(11)); ?>">Privacybeleid</a></small>
+                <small><?php echo esc_html(frootz_get('footer_tagline')); ?></small><br>
+                <small><a href="<?php echo esc_url(get_permalink(11)); ?>"><?php echo esc_html(frootz_get('footer_privacy')); ?></a></small>
             </p>
 
         </div>
