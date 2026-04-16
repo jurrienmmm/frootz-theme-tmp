@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 3.0.1
+Version: 3.1.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1649,47 +1649,61 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
 
 
 
+
+
 /* ==========================================================================
-   Full 4-sided arabesque frame via border-image (2026-04-16 v3.0)
-   Using frame-with-fruit.png (2000×2000) as 9-slice border.
+   Full arabesque frame via 4 fixed edge overlays (2026-04-16 v3.1)
+   Each edge shows its own region of frame-with-fruit.png
    ========================================================================== */
 
 body {
-    padding: 40px 40px 90px 40px !important;
+    padding: 60px 60px 140px 60px !important;
     background: #f7f8f9;
     position: relative;
 }
-
 body::before, body::after { all: unset !important; content: none !important; }
+html::before, html::after { all: unset; content: none; }
 
-/* Hide old edge divs */
-.frame-top, .frame-bottom, .frame-left, .frame-right { display: none !important; }
-
-/* Full baroque frame on all 4 sides, stretched around body */
-body {
-    box-sizing: border-box;
+.frame-top, .frame-bottom, .frame-left, .frame-right {
+    display: block !important;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9996;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/frame-with-fruit.png');
+    background-repeat: no-repeat;
 }
 
-/* body itself gets the border-image (covers full scrollable height) */
-body {
-    border-style: solid !important;
-    border-color: transparent !important;
-    border-width: 40px 40px 90px 40px !important;
-    border-image-source: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/frame-with-fruit.png') !important;
-    border-image-slice: 180 180 400 180 !important;
-    border-image-width: 40px 40px 90px 40px !important;
-    border-image-repeat: stretch !important;
+.frame-top {
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background-size: 100vw calc(100vw * 5);
+    background-position: center top;
+}
+.frame-bottom {
+    bottom: 0; left: 0; right: 0;
+    height: 140px;
+    background-size: 100vw calc(100vw * 2.5);
+    background-position: center bottom;
+}
+.frame-left {
+    top: 60px; bottom: 140px; left: 0;
+    width: 60px;
+    background-size: calc(100vh * 5) 100vh;
+    background-position: left center;
+}
+.frame-right {
+    top: 60px; bottom: 140px; right: 0;
+    width: 60px;
+    background-size: calc(100vh * 5) 100vh;
+    background-position: right center;
 }
 
-html::before { all: unset; content: none; }
-
-.whatsapp-sticky { right: 60px !important; bottom: 110px !important; z-index: 9997 !important; }
+.whatsapp-sticky { right: 80px !important; bottom: 160px !important; z-index: 9997 !important; }
 
 @media (max-width: 768px) {
-    body { padding: 20px 20px 45px 20px !important; }
-    html::before {
-        border-width: 20px 20px 45px 20px;
-        border-image-width: 20px 20px 45px 20px;
-    }
-    .whatsapp-sticky { right: 30px !important; bottom: 60px !important; }
+    body { padding: 30px 30px 70px 30px !important; }
+    .frame-top { height: 30px; }
+    .frame-bottom { height: 70px; }
+    .frame-left, .frame-right { width: 30px; top: 30px; bottom: 70px; }
+    .whatsapp-sticky { right: 40px !important; bottom: 90px !important; }
 }
