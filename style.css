@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 1.8.0
+Version: 1.9.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1635,40 +1635,41 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
 
 
 
+
+
 /* ==========================================================================
-   Ornate arabesque frame — single overlay with ornate-frame-full.png (2026-04-16)
+   Ornate arabesque frame via border-image (2026-04-16 v1.9)
+   Source: 2000×2000 PNG. Slices: 300px top, 300 right, 700 bottom, 300 left.
+   Bottom slice larger to include fruit illustration.
    ========================================================================== */
 
 body {
-    padding: 10px;
-    box-sizing: border-box;
+    padding: 0 !important;
     background: #f7f8f9;
 }
 
 body::before, body::after { all: unset !important; content: none !important; }
 
-/* The 4 edge divs — hide, not needed; overlay handles everything */
-.frame-top,
-.frame-bottom,
-.frame-left,
-.frame-right { display: none !important; }
+.frame-top, .frame-bottom, .frame-left, .frame-right { display: none !important; }
 
-/* Full ornate frame as fixed overlay */
 html::before {
     content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 9996;
-    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
+    border-style: solid;
+    border-width: 60px 60px 140px 60px;
+    border-color: transparent;
+    border-image-source: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
+    border-image-slice: 300 300 700 300;
+    border-image-repeat: stretch;
+    border-image-width: 60px 60px 140px 60px;
 }
 
-/* Keep sticky elements inside the frame */
-.whatsapp-sticky { right: 32px !important; bottom: 32px !important; z-index: 9997 !important; }
 @media (max-width: 768px) {
-    body { padding: 6px; }
-    .whatsapp-sticky { right: 18px !important; bottom: 18px !important; }
+    html::before {
+        border-width: 30px 30px 70px 30px;
+        border-image-width: 30px 30px 70px 30px;
+    }
 }
