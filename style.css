@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 1.9.1
+Version: 2.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1637,10 +1637,11 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
 
 
 
+
+
 /* ==========================================================================
-   Ornate arabesque frame via border-image (2026-04-16 v1.9)
-   Source: 2000×2000 PNG. Slices: 300px top, 300 right, 700 bottom, 300 left.
-   Bottom slice larger to include fruit illustration.
+   Ornate arabesque frame — top+bottom explicit (2026-04-16 v2.0)
+   Source has scrollwork top & bottom only (sides are empty)
    ========================================================================== */
 
 body {
@@ -1650,26 +1651,41 @@ body {
 
 body::before, body::after { all: unset !important; content: none !important; }
 
-.frame-top, .frame-bottom, .frame-left, .frame-right { display: none !important; }
+.frame-left, .frame-right { display: none !important; }
 
-html::before {
-    content: '';
+.frame-top, .frame-bottom {
+    display: block !important;
     position: fixed;
-    inset: 0;
+    left: 0;
+    right: 0;
     pointer-events: none;
     z-index: 9996;
-    border-style: solid;
-    border-width: 50px;
-    border-color: transparent;
-    border-image-source: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    border-image-slice: 280;
-    border-image-repeat: stretch;
-    border-image-width: 50px;
+    background-repeat: no-repeat;
 }
 
+/* Top: show upper portion of source (scroll art) */
+.frame-top {
+    top: 0;
+    height: 70px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
+    background-size: 100% 500%;  /* stretch so visible 70px = top 20% of source */
+    background-position: center top;
+}
+
+/* Bottom: show bottom portion (scroll + fruit) */
+.frame-bottom {
+    bottom: 0;
+    height: 130px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
+    background-size: 100% 285%;  /* 2000/700 ≈ 285% */
+    background-position: center bottom;
+}
+
+/* Keep content clear of fixed cookie banner + frame */
+.whatsapp-sticky { right: 32px !important; bottom: 140px !important; z-index: 9997 !important; }
+
 @media (max-width: 768px) {
-    html::before {
-        border-width: 28px;
-        border-image-width: 28px;
-    }
+    .frame-top { height: 38px; background-size: 100% 500%; }
+    .frame-bottom { height: 64px; background-size: 100% 285%; }
+    .whatsapp-sticky { right: 18px !important; bottom: 76px !important; }
 }
