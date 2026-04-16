@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 3.0.0
+Version: 3.0.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1666,23 +1666,22 @@ body::before, body::after { all: unset !important; content: none !important; }
 .frame-top, .frame-bottom, .frame-left, .frame-right { display: none !important; }
 
 /* Full baroque frame on all 4 sides, stretched around body */
-html::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    pointer-events: none;
-    z-index: 5;
-    border-style: solid;
-    border-color: transparent;
-    border-width: 40px 40px 90px 40px;
-    border-image-source: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/frame-with-fruit.png');
-    border-image-slice: 180 180 400 180;
-    border-image-width: 40px 40px 90px 40px;
-    border-image-repeat: stretch;
+body {
+    box-sizing: border-box;
 }
+
+/* body itself gets the border-image (covers full scrollable height) */
+body {
+    border-style: solid !important;
+    border-color: transparent !important;
+    border-width: 40px 40px 90px 40px !important;
+    border-image-source: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/frame-with-fruit.png') !important;
+    border-image-slice: 180 180 400 180 !important;
+    border-image-width: 40px 40px 90px 40px !important;
+    border-image-repeat: stretch !important;
+}
+
+html::before { all: unset; content: none; }
 
 .whatsapp-sticky { right: 60px !important; bottom: 110px !important; z-index: 9997 !important; }
 
