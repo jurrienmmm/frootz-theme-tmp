@@ -607,3 +607,37 @@ add_filter('gettext_wpforms-lite', function($translation, $text, $domain) {
     $m = $map[$lang] ?? [];
     return $m[$text] ?? $translation;
 }, 10, 3);
+
+
+/* Cookie Notice banner — translate per language via JS */
+add_action('wp_footer', function() {
+    $lang = frootz_current_lang();
+    if ($lang === 'nl') return;
+    $msgs = [
+        'en' => ['msg' => 'This site uses minimal cookies for language and theme preference. No tracking.', 'btn' => 'OK', 'link' => 'Privacy Policy'],
+        'es' => ['msg' => 'Este sitio usa cookies mínimas para preferencia de idioma y tema. Sin seguimiento.', 'btn' => 'OK', 'link' => 'Política de privacidad'],
+    ];
+    $m = $msgs[$lang] ?? null;
+    if (!$m) return;
+    ?>
+    <script>
+    (function() {
+        function applyTranslation() {
+            var box = document.querySelector('#cookie-notice');
+            if (!box) return false;
+            var msg = box.querySelector('.cn-text-container');
+            if (msg) msg.firstChild ? (msg.firstChild.nodeType === 3 ? msg.firstChild.textContent = <?php echo wp_json_encode($m['msg']); ?> : msg.innerText = <?php echo wp_json_encode($m['msg']); ?>) : msg.innerText = <?php echo wp_json_encode($m['msg']); ?>;
+            var ok = box.querySelector('.cn-set-cookie');
+            if (ok) ok.innerText = <?php echo wp_json_encode($m['btn']); ?>;
+            var link = box.querySelector('.cn-more-info');
+            if (link) link.innerText = <?php echo wp_json_encode($m['link']); ?>;
+            return true;
+        }
+        if (!applyTranslation()) {
+            document.addEventListener('DOMContentLoaded', applyTranslation);
+            setTimeout(applyTranslation, 500);
+        }
+    })();
+    </script>
+    <?php
+}, 100);

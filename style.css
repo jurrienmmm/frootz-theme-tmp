@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 2.0.1
+Version: 2.1.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1639,14 +1639,17 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
 
 
 
+
+
 /* ==========================================================================
-   Ornate arabesque frame — top+bottom explicit (2026-04-16 v2.0)
-   Source has scrollwork top & bottom only (sides are empty)
+   Ornate arabesque frame — absolute positioned (2026-04-16 v2.1)
+   Frame at start + end of page only; doesn't interfere with scrolling content
    ========================================================================== */
 
 body {
-    padding: 70px 0 130px 0 !important;
+    padding: 0 !important;
     background: #f7f8f9;
+    position: relative;
 }
 
 body::before, body::after { all: unset !important; content: none !important; }
@@ -1655,37 +1658,33 @@ body::before, body::after { all: unset !important; content: none !important; }
 
 .frame-top, .frame-bottom {
     display: block !important;
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     pointer-events: none;
-    z-index: 9996;
+    z-index: 5;
     background-repeat: no-repeat;
 }
 
-/* Top: show upper portion of source (scroll art) */
 .frame-top {
     top: 0;
     height: 70px;
     background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    background-size: 100% 500%;  /* stretch so visible 70px = top 20% of source */
+    background-size: 100% 500%;
     background-position: center top;
 }
 
-/* Bottom: show bottom portion (scroll + fruit) */
 .frame-bottom {
     bottom: 0;
     height: 130px;
     background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    background-size: 100% 285%;  /* 2000/700 ≈ 285% */
+    background-size: 100% 285%;
     background-position: center bottom;
 }
 
-/* Keep content clear of fixed cookie banner + frame */
-.whatsapp-sticky { right: 32px !important; bottom: 140px !important; z-index: 9997 !important; }
+.whatsapp-sticky { right: 24px !important; bottom: 90px !important; z-index: 9997 !important; }
 
 @media (max-width: 768px) {
-    body { padding: 38px 0 64px 0 !important; }
     .frame-top { height: 38px; background-size: 100% 500%; }
     .frame-bottom { height: 64px; background-size: 100% 285%; }
     .whatsapp-sticky { right: 18px !important; bottom: 76px !important; }
