@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 2.4.0
+Version: 2.5.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1645,44 +1645,50 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
 
 
 
+
+
 /* ==========================================================================
-   Ornate arabesque frame — 4-side border-image (2026-04-16 v2.4)
+   Ornate arabesque frame — top+bottom only (2026-04-16 v2.5 stable)
+   Source PNG has artwork only on top+bottom edges. For 4-side arabesque
+   we need new side assets.
    ========================================================================== */
 
 body {
-    padding: 40px 40px 110px 40px !important;
+    padding: 5vw 0 12vw 0 !important;
     background: #f7f8f9;
     position: relative;
 }
 body::before, body::after { all: unset !important; content: none !important; }
-.frame-top, .frame-bottom, .frame-left, .frame-right { display: none !important; }
+.frame-left, .frame-right { display: none !important; }
 
-/* Wrapper rendering the ornate frame on all 4 sides + extra bottom for fruit */
-html::before {
-    content: '';
+.frame-top, .frame-bottom {
+    display: block !important;
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
-    height: 100%;
     pointer-events: none;
     z-index: 5;
-    border-style: solid;
-    border-width: 35px 35px 100px 35px;
-    border-color: transparent;
-    border-image-source: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    border-image-slice: 180 180 500 180;
-    border-image-repeat: stretch;
-    border-image-width: 35px 35px 100px 35px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
+    background-repeat: no-repeat;
+}
+.frame-top {
+    top: 0;
+    height: 5vw;
+    min-height: 40px;
+    background-size: 100vw 25vw;
+    background-position: center -1.5vw;
+}
+.frame-bottom {
+    bottom: 0;
+    height: 10vw;
+    min-height: 80px;
+    background-size: 100vw 28.5vw;
+    background-position: center calc(100% + 1vw);
 }
 
-.whatsapp-sticky { right: 50px !important; bottom: 120px !important; z-index: 9997 !important; }
+.whatsapp-sticky { right: 24px !important; bottom: 90px !important; z-index: 9997 !important; }
 
 @media (max-width: 768px) {
-    body { padding: 20px 20px 55px 20px !important; }
-    html::before {
-        border-width: 18px 18px 50px 18px;
-        border-image-width: 18px 18px 50px 18px;
-    }
-    .whatsapp-sticky { right: 28px !important; bottom: 70px !important; }
+    body { padding-top: 0 !important; padding-bottom: 18vw !important; }
+    .whatsapp-sticky { right: 18px !important; bottom: 76px !important; }
 }
