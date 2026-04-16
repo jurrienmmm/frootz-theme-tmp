@@ -536,3 +536,55 @@ function frootz_render_settings_page() {
     </div>
     <?php
 }
+
+
+/* ========== WPForms translations per language ========== */
+add_filter('wpforms_frontend_form_data', function($form_data) {
+    if (!is_array($form_data) || empty($form_data['fields'])) return $form_data;
+    $lang = frootz_current_lang();
+    $dict = [
+        'nl' => [
+            'Name' => 'Naam',
+            'First' => 'Voornaam',
+            'Last' => 'Achternaam',
+            'Email' => 'E-mailadres',
+            'Comment or Message' => 'Bericht',
+            'Submit' => 'Verzenden',
+        ],
+        'en' => [
+            'Name' => 'Name',
+            'First' => 'First',
+            'Last' => 'Last',
+            'Email' => 'Email',
+            'Comment or Message' => 'Message',
+            'Submit' => 'Submit',
+        ],
+        'es' => [
+            'Name' => 'Nombre',
+            'First' => 'Nombre',
+            'Last' => 'Apellido',
+            'Email' => 'Correo electrónico',
+            'Comment or Message' => 'Mensaje',
+            'Submit' => 'Enviar',
+        ],
+    ];
+    $map = $dict[$lang] ?? $dict['nl'];
+    foreach ($form_data['fields'] as &$field) {
+        if (isset($field['label']) && isset($map[$field['label']])) {
+            $field['label'] = $map[$field['label']];
+        }
+        // Name field has sublabels
+        if (!empty($field['format']) && in_array($field['format'], ['first-last','first-middle-last'])) {
+            foreach (['first','middle','last'] as $sub) {
+                $key = ucfirst($sub);
+                if (isset($field[$sub]['sublabel']) && isset($map[$key])) {
+                    $field[$sub]['sublabel'] = $map[$key];
+                }
+            }
+        }
+    }
+    if (isset($form_data['settings']['submit_text']) && isset($map[$form_data['settings']['submit_text']])) {
+        $form_data['settings']['submit_text'] = $map[$form_data['settings']['submit_text']];
+    }
+    return $form_data;
+}, 20);
