@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 2.1.0
+Version: 2.2.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1641,9 +1641,10 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
 
 
 
+
+
 /* ==========================================================================
-   Ornate arabesque frame — absolute positioned (2026-04-16 v2.1)
-   Frame at start + end of page only; doesn't interfere with scrolling content
+   Ornate arabesque frame — vw-sized responsive (2026-04-16 v2.2)
    ========================================================================== */
 
 body {
@@ -1651,9 +1652,7 @@ body {
     background: #f7f8f9;
     position: relative;
 }
-
 body::before, body::after { all: unset !important; content: none !important; }
-
 .frame-left, .frame-right { display: none !important; }
 
 .frame-top, .frame-bottom {
@@ -1663,29 +1662,32 @@ body::before, body::after { all: unset !important; content: none !important; }
     right: 0;
     pointer-events: none;
     z-index: 5;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
     background-repeat: no-repeat;
 }
 
+/* Top: show top ~20% of source (scroll art).
+   Image scaled to 100vw wide × 25vw tall (5x container height). */
 .frame-top {
     top: 0;
-    height: 70px;
-    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    background-size: 100% 500%;
-    background-position: center top;
+    height: 5vw;
+    min-height: 40px;
+    background-size: 100vw 25vw;
+    background-position: 0 0;
 }
 
+/* Bottom: show bottom ~35% of source (scroll + fruit).
+   Image at 100vw × ~14.3vw scaled = 100vw × 14vw container height makes 35% visible (height = 100vw / (1/0.35) = 35vw)… simpler: bg-size 100vw 28.5vw, height 10vw shows bottom 10/28.5 = 35%. */
 .frame-bottom {
     bottom: 0;
-    height: 130px;
-    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    background-size: 100% 285%;
-    background-position: center bottom;
+    height: 10vw;
+    min-height: 80px;
+    background-size: 100vw 28.5vw;
+    background-position: 0 100%;
 }
 
 .whatsapp-sticky { right: 24px !important; bottom: 90px !important; z-index: 9997 !important; }
 
 @media (max-width: 768px) {
-    .frame-top { height: 38px; background-size: 100% 500%; }
-    .frame-bottom { height: 64px; background-size: 100% 285%; }
     .whatsapp-sticky { right: 18px !important; bottom: 76px !important; }
 }
