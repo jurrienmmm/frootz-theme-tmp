@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 3.2.0
+Version: 3.3.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -156,27 +156,27 @@ p {
 }
 .frame-top {
     top: 0; left: 0; right: 0;
-    height: 5vw;
-    min-height: 40px;
-    background-size: 100vw 25vw;
-    background-position: center -1.5vw;
+    height: 3.5vw;
+    min-height: 28px;
+    background-size: 150vw 25vw;
+    background-position: center -3vw;
 }
 .frame-bottom {
     bottom: 0; left: 0; right: 0;
-    height: 10vw;
-    min-height: 80px;
-    background-size: 100vw 28.5vw;
-    background-position: center calc(100% + 1vw);
+    height: 3.5vw;
+    min-height: 28px;
+    background-size: 150vw 25vw;
+    background-position: center calc(100% + 3vw);
 }
 .frame-left {
-    top: 5vw; bottom: 10vw; left: 0;
+    top: 3.5vw; bottom: 3.5vw; left: 0;
     width: 5vw;
     min-width: 40px;
     background-size: 25vh 100vh;
     background-position: -1.5vh center;
 }
 .frame-right {
-    top: 5vw; bottom: 10vw; right: 0;
+    top: 3.5vw; bottom: 3.5vw; right: 0;
     width: 5vw;
     min-width: 40px;
     background-size: 25vh 100vh;
@@ -1669,27 +1669,27 @@ html::before, html::after { all: unset; content: none; }
 
 .frame-top {
     top: 0; left: 0; right: 0;
-    height: 5vw;
-    min-height: 40px;
-    background-size: 100vw 25vw;
-    background-position: center -1.5vw;
+    height: 3.5vw;
+    min-height: 28px;
+    background-size: 150vw 25vw;
+    background-position: center -3vw;
 }
 .frame-bottom {
     bottom: 0; left: 0; right: 0;
-    height: 10vw;
-    min-height: 80px;
-    background-size: 100vw 28.5vw;
-    background-position: center calc(100% + 1vw);
+    height: 3.5vw;
+    min-height: 28px;
+    background-size: 150vw 25vw;
+    background-position: center calc(100% + 3vw);
 }
 .frame-left {
-    top: 5vw; bottom: 10vw; left: 0;
+    top: 3.5vw; bottom: 3.5vw; left: 0;
     width: 5vw;
     min-width: 40px;
     background-size: 25vh 100vh;
     background-position: -1.5vh center;
 }
 .frame-right {
-    top: 5vw; bottom: 10vw; right: 0;
+    top: 3.5vw; bottom: 3.5vw; right: 0;
     width: 5vw;
     min-width: 40px;
     background-size: 25vh 100vh;
@@ -1702,27 +1702,27 @@ html::before, html::after { all: unset; content: none; }
     body { padding: 30px 30px 70px 30px !important; }
     .frame-top {
     top: 0; left: 0; right: 0;
-    height: 5vw;
-    min-height: 40px;
-    background-size: 100vw 25vw;
-    background-position: center -1.5vw;
+    height: 3.5vw;
+    min-height: 28px;
+    background-size: 150vw 25vw;
+    background-position: center -3vw;
 }
 .frame-bottom {
     bottom: 0; left: 0; right: 0;
-    height: 10vw;
-    min-height: 80px;
-    background-size: 100vw 28.5vw;
-    background-position: center calc(100% + 1vw);
+    height: 3.5vw;
+    min-height: 28px;
+    background-size: 150vw 25vw;
+    background-position: center calc(100% + 3vw);
 }
 .frame-left {
-    top: 5vw; bottom: 10vw; left: 0;
+    top: 3.5vw; bottom: 3.5vw; left: 0;
     width: 5vw;
     min-width: 40px;
     background-size: 25vh 100vh;
     background-position: -1.5vh center;
 }
 .frame-right {
-    top: 5vw; bottom: 10vw; right: 0;
+    top: 3.5vw; bottom: 3.5vw; right: 0;
     width: 5vw;
     min-width: 40px;
     background-size: 25vh 100vh;
