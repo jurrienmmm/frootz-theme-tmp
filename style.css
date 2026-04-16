@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 1.6.1
+Version: 1.7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1490,7 +1490,6 @@ body.theme-light .contact-form textarea {
 .frame-left,
 .frame-right { display: none !important; }
 
-.site-frame-inner { padding: 0 !important; }
 
 .animate-in {
     opacity: 1 !important;
@@ -1630,4 +1629,93 @@ body:not(.theme-light) .wpforms-container-full .wpforms-field textarea::placehol
 }
 body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
     color: #d4af37 !important;
+}
+
+/* ==========================================================================
+   Ornate arabesque frame — restored with uploaded PNGs (2026-04-16)
+   Removes the earlier plain double-line variant.
+   ========================================================================== */
+
+body {
+    padding: 34px;
+    box-sizing: border-box;
+    background: #f7f8f9;
+}
+
+/* Kill any leftover plain-line frame */
+body::before, body::after { all: unset !important; content: none !important; }
+
+/* Repeating edge borders (original classes, now with real URLs) */
+.frame-top,
+.frame-bottom,
+.frame-left,
+.frame-right {
+    display: block !important;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9995;
+    background-repeat: repeat;
+}
+.frame-top {
+    top: 12px; left: 44px; right: 44px;
+    height: 22px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-top.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    background-position: left center;
+}
+.frame-bottom {
+    bottom: 12px; left: 44px; right: 44px;
+    height: 22px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-bottom.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    background-position: left center;
+}
+.frame-left {
+    top: 44px; bottom: 44px; left: 12px;
+    width: 22px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-left.png');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+}
+.frame-right {
+    top: 44px; bottom: 44px; right: 12px;
+    width: 22px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-right.png');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+}
+
+/* Corners — overlay via body pseudo */
+html::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9996;
+    background-image:
+        url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-tl.png'),
+        url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-tr.png'),
+        url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-bl.png'),
+        url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-br.png');
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 8px 8px, right 8px top 8px, 8px bottom 8px, right 8px bottom 8px;
+    background-size: 44px 44px, 44px 44px, 44px 44px, 44px 44px;
+}
+
+@media (max-width: 768px) {
+    body { padding: 18px; }
+    .frame-top, .frame-bottom { left: 24px; right: 24px; height: 14px; }
+    .frame-left, .frame-right { top: 24px; bottom: 24px; width: 14px; }
+    .frame-top { top: 6px; }
+    .frame-bottom { bottom: 6px; }
+    .frame-left { left: 6px; }
+    .frame-right { right: 6px; }
+    html::before {
+        background-position: 4px 4px, right 4px top 4px, 4px bottom 4px, right 4px bottom 4px;
+        background-size: 26px 26px, 26px 26px, 26px 26px, 26px 26px;
+    }
 }
