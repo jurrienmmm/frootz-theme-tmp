@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 2.7.0
+Version: 2.8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1668,36 +1668,20 @@ body::before, body::after { all: unset !important; content: none !important; }
     min-width: 40px;
     pointer-events: none;
     z-index: 4;
-    overflow: hidden;
-}
-.frame-left { left: 0; }
-.frame-right { right: 0; }
-.frame-left::before,
-.frame-right::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vh;
-    height: 5vw;
-    min-height: 40px;
     background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    background-repeat: repeat-x;
-    background-size: auto 25vw;
-    background-position: center -1.5vw;
+    background-repeat: repeat-y;
+    background-size: 25vw 25vw;
 }
-.frame-left::before {
-    transform: rotate(90deg) translateY(-100%);
-    transform-origin: top left;
+.frame-left {
+    left: 0;
+    background-position: left top;
 }
-.frame-right::before {
-    transform: rotate(-90deg);
-    transform-origin: top left;
-    top: 100%;
+.frame-right {
+    right: 0;
+    background-position: right top;
 }
 @media (max-width: 768px) {
-    .frame-left, .frame-right { width: 28px; min-width: 28px; }
-    .frame-left::before, .frame-right::before { height: 28px; background-size: auto 140px; }
+    .frame-left, .frame-right { width: 28px; min-width: 28px; background-size: 140px 140px; }
 }
 
 .frame-top, .frame-bottom {
