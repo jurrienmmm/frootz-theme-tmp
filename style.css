@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 3.3.2
+Version: 4.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1645,88 +1645,50 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
 
 
 
+
+
 /* ==========================================================================
-   Full arabesque frame via 4 fixed edge overlays (2026-04-16 v3.1)
-   Each edge shows its own region of ornate-frame-full.png
+   Ornate frame on .site-frame wrapper (2026-04-16 v4.0)
+   Uses border-image on the content wrapper → ONE continuous frame with
+   connected corners. Source: ornate-frame-full.png (square baroque frame).
    ========================================================================== */
 
 body {
-    padding: 60px 60px 140px 60px !important;
+    padding: 0 !important;
     background: #f7f8f9;
     position: relative;
+    border: none !important;
 }
 body::before, body::after { all: unset !important; content: none !important; }
 html::before, html::after { all: unset; content: none; }
 
-.frame-top, .frame-bottom, .frame-left, .frame-right {
-    display: block !important;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9996;
-    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
-    background-repeat: no-repeat;
+/* Kill the 4 edge divs — the wrapper border does everything */
+.frame-top, .frame-bottom, .frame-left, .frame-right { display: none !important; }
+
+/* The wrapper gets the ornate border */
+.site-frame {
+    position: relative;
+    min-height: 100vh;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 40px 40px 90px 40px;
+    border-image-source: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
+    border-image-slice: 180 180 400 180;
+    border-image-width: 40px 40px 90px 40px;
+    border-image-repeat: stretch;
+    box-sizing: border-box;
 }
 
-.frame-top {
-    top: 0; left: 0; right: 0;
-    height: 3.5vw;
-    min-height: 28px;
-    background-size: 220vw 25vw;
-    background-position: center -3vw;
-}
-.frame-bottom {
-    bottom: 0; left: 0; right: 0;
-    height: 3.5vw;
-    min-height: 28px;
-    background-size: 220vw 25vw;
-    background-position: center -3vw;
-}
-.frame-left {
-    top: 3.5vw; bottom: 3.5vw; left: 0;
-    width: 5vw;
-    min-width: 40px;
-    background-size: 25vh 100vh;
-    background-position: -1.5vh center;
-}
-.frame-right {
-    top: 3.5vw; bottom: 3.5vw; right: 0;
-    width: 5vw;
-    min-width: 40px;
-    background-size: 25vh 100vh;
-    background-position: calc(100% + 1.5vh) center;
+.site-frame-inner {
+    padding: 0 !important;
 }
 
-.whatsapp-sticky { right: 80px !important; bottom: 160px !important; z-index: 9997 !important; }
+.whatsapp-sticky { right: 60px !important; bottom: 110px !important; z-index: 9997 !important; }
 
 @media (max-width: 768px) {
-    body { padding: 30px 30px 70px 30px !important; }
-    .frame-top {
-    top: 0; left: 0; right: 0;
-    height: 3.5vw;
-    min-height: 28px;
-    background-size: 220vw 25vw;
-    background-position: center -3vw;
-}
-.frame-bottom {
-    bottom: 0; left: 0; right: 0;
-    height: 3.5vw;
-    min-height: 28px;
-    background-size: 220vw 25vw;
-    background-position: center -3vw;
-}
-.frame-left {
-    top: 3.5vw; bottom: 3.5vw; left: 0;
-    width: 5vw;
-    min-width: 40px;
-    background-size: 25vh 100vh;
-    background-position: -1.5vh center;
-}
-.frame-right {
-    top: 3.5vw; bottom: 3.5vw; right: 0;
-    width: 5vw;
-    min-width: 40px;
-    background-size: 25vh 100vh;
-    background-position: calc(100% + 1.5vh) center;
-}
-    .whatsapp-sticky { right: 40px !important; bottom: 90px !important; }
+    .site-frame {
+        border-width: 20px 20px 45px 20px;
+        border-image-width: 20px 20px 45px 20px;
+    }
+    .whatsapp-sticky { right: 30px !important; bottom: 60px !important; }
 }
