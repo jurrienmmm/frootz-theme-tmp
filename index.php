@@ -193,7 +193,7 @@
 
                 <!-- Kiwi Royale -->
                 <article class="product-card product-card--coming-soon animate-in animate-in--delay-4">
-                    <span class="coming-soon-badge" data-i18n="coming_soon">Binnenkort</span>
+                    <span class="coming-soon-badge"><?php echo esc_html(frootz_get("coming_soon_badge")); ?></span>
                     <img src="<?php echo esc_url(wp_get_attachment_image_url(15, 'full')); ?>"
                          alt="Kiwi Royale"
                          class="product-img">
@@ -204,7 +204,7 @@
 
                 <!-- Melon Royale -->
                 <article class="product-card product-card--coming-soon animate-in animate-in--delay-5">
-                    <span class="coming-soon-badge" data-i18n="coming_soon">Binnenkort</span>
+                    <span class="coming-soon-badge"><?php echo esc_html(frootz_get("coming_soon_badge")); ?></span>
                     <img src="<?php echo esc_url(wp_get_attachment_image_url(17, 'full')); ?>"
                          alt="Meloen Royale"
                          class="product-img">
