@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 2.2.0
+Version: 2.2.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1673,7 +1673,7 @@ body::before, body::after { all: unset !important; content: none !important; }
     height: 5vw;
     min-height: 40px;
     background-size: 100vw 25vw;
-    background-position: 0 0;
+    background-position: center -1.5vw;
 }
 
 /* Bottom: show bottom ~35% of source (scroll + fruit).
@@ -1683,7 +1683,7 @@ body::before, body::after { all: unset !important; content: none !important; }
     height: 10vw;
     min-height: 80px;
     background-size: 100vw 28.5vw;
-    background-position: 0 100%;
+    background-position: center calc(100% + 1vw);
 }
 
 .whatsapp-sticky { right: 24px !important; bottom: 90px !important; z-index: 9997 !important; }
