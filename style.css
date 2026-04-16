@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 1.7.0
+Version: 1.7.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1631,21 +1631,20 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
     color: #d4af37 !important;
 }
 
+
+
 /* ==========================================================================
-   Ornate arabesque frame — restored with uploaded PNGs (2026-04-16)
-   Removes the earlier plain double-line variant.
+   Ornate arabesque frame — restored, corrected sizing (2026-04-16)
    ========================================================================== */
 
 body {
-    padding: 34px;
+    padding: 60px;
     box-sizing: border-box;
     background: #f7f8f9;
 }
 
-/* Kill any leftover plain-line frame */
 body::before, body::after { all: unset !important; content: none !important; }
 
-/* Repeating edge borders (original classes, now with real URLs) */
 .frame-top,
 .frame-bottom,
 .frame-left,
@@ -1654,42 +1653,40 @@ body::before, body::after { all: unset !important; content: none !important; }
     position: fixed;
     pointer-events: none;
     z-index: 9995;
-    background-repeat: repeat;
 }
 .frame-top {
-    top: 12px; left: 44px; right: 44px;
-    height: 22px;
+    top: 10px; left: 60px; right: 60px;
+    height: 50px;
     background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-top.png');
-    background-repeat: repeat-x;
-    background-size: auto 100%;
-    background-position: left center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100%;
 }
 .frame-bottom {
-    bottom: 12px; left: 44px; right: 44px;
-    height: 22px;
+    bottom: 10px; left: 60px; right: 60px;
+    height: 50px;
     background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-bottom.png');
-    background-repeat: repeat-x;
-    background-size: auto 100%;
-    background-position: left center;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% 100%;
 }
 .frame-left {
-    top: 44px; bottom: 44px; left: 12px;
-    width: 22px;
+    top: 60px; bottom: 60px; left: 10px;
+    width: 50px;
     background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-left.png');
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-position: center top;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 100% 100%;
 }
 .frame-right {
-    top: 44px; bottom: 44px; right: 12px;
-    width: 22px;
+    top: 60px; bottom: 60px; right: 10px;
+    width: 50px;
     background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-right.png');
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-position: center top;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 100% 100%;
 }
 
-/* Corners — overlay via body pseudo */
 html::before {
     content: '';
     position: fixed;
@@ -1702,20 +1699,20 @@ html::before {
         url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-bl.png'),
         url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-br.png');
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: 8px 8px, right 8px top 8px, 8px bottom 8px, right 8px bottom 8px;
-    background-size: 44px 44px, 44px 44px, 44px 44px, 44px 44px;
+    background-position: 5px 5px, right 5px top 5px, 5px bottom 5px, right 5px bottom 5px;
+    background-size: 70px 70px, 70px 70px, 70px 70px, 70px 70px;
 }
 
 @media (max-width: 768px) {
-    body { padding: 18px; }
-    .frame-top, .frame-bottom { left: 24px; right: 24px; height: 14px; }
-    .frame-left, .frame-right { top: 24px; bottom: 24px; width: 14px; }
-    .frame-top { top: 6px; }
-    .frame-bottom { bottom: 6px; }
-    .frame-left { left: 6px; }
-    .frame-right { right: 6px; }
+    body { padding: 28px; }
+    .frame-top, .frame-bottom { left: 28px; right: 28px; height: 22px; }
+    .frame-left, .frame-right { top: 28px; bottom: 28px; width: 22px; }
+    .frame-top { top: 4px; }
+    .frame-bottom { bottom: 4px; }
+    .frame-left { left: 4px; }
+    .frame-right { right: 4px; }
     html::before {
-        background-position: 4px 4px, right 4px top 4px, 4px bottom 4px, right 4px bottom 4px;
-        background-size: 26px 26px, 26px 26px, 26px 26px, 26px 26px;
+        background-position: 2px 2px, right 2px top 2px, 2px bottom 2px, right 2px bottom 2px;
+        background-size: 32px 32px, 32px 32px, 32px 32px, 32px 32px;
     }
 }
