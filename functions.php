@@ -588,3 +588,22 @@ add_filter('wpforms_frontend_form_data', function($form_data) {
     }
     return $form_data;
 }, 20);
+
+
+/* Translate WPForms built-in labels (First/Last sublabels etc) via gettext */
+add_filter('gettext_wpforms-lite', function($translation, $text, $domain) {
+    $lang = frootz_current_lang();
+    if ($lang === 'en') return $translation;
+    $map = [
+        'nl' => [
+            'First' => 'Voornaam', 'Last' => 'Achternaam', 'Middle' => 'Tussenvoegsel',
+            'Name' => 'Naam', 'Email' => 'E-mail', 'Submit' => 'Verzenden',
+        ],
+        'es' => [
+            'First' => 'Nombre', 'Last' => 'Apellido', 'Middle' => 'Segundo nombre',
+            'Name' => 'Nombre', 'Email' => 'Correo', 'Submit' => 'Enviar',
+        ],
+    ];
+    $m = $map[$lang] ?? [];
+    return $m[$text] ?? $translation;
+}, 10, 3);
