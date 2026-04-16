@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 1.7.1
+Version: 1.8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1633,86 +1633,42 @@ body:not(.theme-light) .wpforms-container-full .wpforms-required-label {
 
 
 
+
+
 /* ==========================================================================
-   Ornate arabesque frame — restored, corrected sizing (2026-04-16)
+   Ornate arabesque frame — single overlay with ornate-frame-full.png (2026-04-16)
    ========================================================================== */
 
 body {
-    padding: 60px;
+    padding: 10px;
     box-sizing: border-box;
     background: #f7f8f9;
 }
 
 body::before, body::after { all: unset !important; content: none !important; }
 
+/* The 4 edge divs — hide, not needed; overlay handles everything */
 .frame-top,
 .frame-bottom,
 .frame-left,
-.frame-right {
-    display: block !important;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9995;
-}
-.frame-top {
-    top: 10px; left: 60px; right: 60px;
-    height: 50px;
-    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-top.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 100% 100%;
-}
-.frame-bottom {
-    bottom: 10px; left: 60px; right: 60px;
-    height: 50px;
-    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-bottom.png');
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100% 100%;
-}
-.frame-left {
-    top: 60px; bottom: 60px; left: 10px;
-    width: 50px;
-    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-left.png');
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 100% 100%;
-}
-.frame-right {
-    top: 60px; bottom: 60px; right: 10px;
-    width: 50px;
-    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/border-right.png');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 100% 100%;
-}
+.frame-right { display: none !important; }
 
+/* Full ornate frame as fixed overlay */
 html::before {
     content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 9996;
-    background-image:
-        url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-tl.png'),
-        url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-tr.png'),
-        url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-bl.png'),
-        url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/corner-br.png');
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: 5px 5px, right 5px top 5px, 5px bottom 5px, right 5px bottom 5px;
-    background-size: 70px 70px, 70px 70px, 70px 70px, 70px 70px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
+/* Keep sticky elements inside the frame */
+.whatsapp-sticky { right: 32px !important; bottom: 32px !important; z-index: 9997 !important; }
 @media (max-width: 768px) {
-    body { padding: 28px; }
-    .frame-top, .frame-bottom { left: 28px; right: 28px; height: 22px; }
-    .frame-left, .frame-right { top: 28px; bottom: 28px; width: 22px; }
-    .frame-top { top: 4px; }
-    .frame-bottom { bottom: 4px; }
-    .frame-left { left: 4px; }
-    .frame-right { right: 4px; }
-    html::before {
-        background-position: 2px 2px, right 2px top 2px, 2px bottom 2px, right 2px bottom 2px;
-        background-size: 32px 32px, 32px 32px, 32px 32px, 32px 32px;
-    }
+    body { padding: 6px; }
+    .whatsapp-sticky { right: 18px !important; bottom: 18px !important; }
 }
