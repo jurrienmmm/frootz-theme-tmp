@@ -449,7 +449,6 @@
     </svg>
 </a>
 
-<script src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/js/main.js?ver=1.4.0" id="frootz-royale-main-js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>
