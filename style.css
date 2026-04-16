@@ -4,7 +4,7 @@ Theme URI: https://frootzroyale.com
 Author: Frootz Royale
 Author URI: https://frootzroyale.com
 Description: Frootz Royale — premium chocolate-dipped dehydrated fruit. Light theme, standalone (no parent theme required). Restored from backup 2026-04-11.
-Version: 2.6.0
+Version: 2.7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: frootz-royale-white
@@ -1664,19 +1664,40 @@ body::before, body::after { all: unset !important; content: none !important; }
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 30px;
+    width: 5vw;
+    min-width: 40px;
     pointer-events: none;
     z-index: 4;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSIxODAiIHZpZXdCb3g9IjAgMCA2MCAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgogIDxkZWZzPgogICAgPGcgaWQ9InVuaXQiPgogICAgICA8IS0tIENlbnRyYWwgdmVydGljYWwgc3BpbmUgLS0+CiAgICAgIDxsaW5lIHgxPSIzMCIgeTE9IjAiIHgyPSIzMCIgeTI9IjE4MCIgc3Ryb2tlPSIjNUMzQTFFIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICAgIDwhLS0gVG9wIHNjcm9sbCBmbG91cmlzaCAtLT4KICAgICAgPHBhdGggZD0iTTMwIDEwIEMgMTIgMTAsIDggMjgsIDIyIDM2IEMgMzAgMzgsIDM0IDMwLCAzMiAyNCBNMzAgMTAgQyA0OCAxMCwgNTIgMjgsIDM4IDM2IEMgMzAgMzgsIDI2IDMwLCAyOCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUMzQTFFIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICAgIDxjaXJjbGUgY3g9IjMwIiBjeT0iMjIiIHI9IjIuNSIgZmlsbD0iIzVDM0ExRSIvPgogICAgICA8IS0tIE1pZGRsZSBkaWFtb25kIGFjY2VudCAtLT4KICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAsIDkwKSByb3RhdGUoNDUpIj4KICAgICAgICA8cmVjdCB4PSItNiIgeT0iLTYiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUMzQTFFIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgICAgIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIxLjUiIGZpbGw9IiM1QzNBMUUiLz4KICAgICAgPC9nPgogICAgICA8cGF0aCBkPSJNMzAgNzUgTDE4IDkwIEwzMCAxMDUgTTMwIDc1IEw0MiA5MCBMMzAgMTA1IiBmaWxsPSJub25lIiBzdHJva2U9IiM1QzNBMUUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICAgIDwhLS0gQm90dG9tIHNjcm9sbCBmbG91cmlzaCAobWlycm9yIG9mIHRvcCkgLS0+CiAgICAgIDxwYXRoIGQ9Ik0zMCAxNzAgQyAxMiAxNzAsIDggMTUyLCAyMiAxNDQgQyAzMCAxNDIsIDM0IDE1MCwgMzIgMTU2IE0zMCAxNzAgQyA0OCAxNzAsIDUyIDE1MiwgMzggMTQ0IEMgMzAgMTQyLCAyNiAxNTAsIDI4IDE1NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUMzQTFFIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICAgIDxjaXJjbGUgY3g9IjMwIiBjeT0iMTU4IiByPSIyLjUiIGZpbGw9IiM1QzNBMUUiLz4KICAgICAgPCEtLSBTaWRlIGZsb3VyaXNoIGRldGFpbHMgLS0+CiAgICAgIDxwYXRoIGQ9Ik0xNSA1MCBRNSA0NSA4IDU1IiBmaWxsPSJub25lIiBzdHJva2U9IiM1QzNBMUUiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8cGF0aCBkPSJNNDUgNTAgUTU1IDQ1IDUyIDU1IiBmaWxsPSJub25lIiBzdHJva2U9IiM1QzNBMUUiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8cGF0aCBkPSJNMTUgMTMwIFE1IDEzNSA4IDEyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUMzQTFFIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPHBhdGggZD0iTTQ1IDEzMCBRNTUgMTM1IDUyIDEyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUMzQTFFIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvZz4KICA8L2RlZnM+CiAgPHVzZSBocmVmPSIjdW5pdCIvPgo8L3N2Zz4K');
-    background-repeat: repeat-y;
-    background-size: 30px 90px;
+    overflow: hidden;
 }
-.frame-left { left: 10px; }
-.frame-right { right: 10px; }
+.frame-left { left: 0; }
+.frame-right { right: 0; }
+.frame-left::before,
+.frame-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 5vw;
+    min-height: 40px;
+    background-image: url('https://frootz-royale.hostingersite.com/wp-content/uploads/2026/04/ornate-frame-full.png');
+    background-repeat: repeat-x;
+    background-size: auto 25vw;
+    background-position: center -1.5vw;
+}
+.frame-left::before {
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: top left;
+}
+.frame-right::before {
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    top: 100%;
+}
 @media (max-width: 768px) {
-    .frame-left, .frame-right { width: 18px; background-size: 18px 54px; }
-    .frame-left { left: 4px; }
-    .frame-right { right: 4px; }
+    .frame-left, .frame-right { width: 28px; min-width: 28px; }
+    .frame-left::before, .frame-right::before { height: 28px; background-size: auto 140px; }
 }
 
 .frame-top, .frame-bottom {
